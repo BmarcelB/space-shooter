@@ -8,7 +8,6 @@ public class DestroyByContact : MonoBehaviour
     public GameObject playerExplosion;
     public int scoreValue;
     private GameController gameController;
-
     void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -21,6 +20,7 @@ public class DestroyByContact : MonoBehaviour
         {
             Debug.Log("Cannot find 'GameController' script");
         }
+			
     }
 
     void OnTriggerEnter(Collider other)
@@ -40,5 +40,6 @@ public class DestroyByContact : MonoBehaviour
         gameController.AddScore(scoreValue);
         Destroy(other.gameObject);
         Destroy(gameObject);
+
     }
 }
